@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AddpatientComponent } from './patient/addpatient/addpatient.component';
 
 @Component({
   selector: 'app-root',

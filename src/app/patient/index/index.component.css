@@ -1,0 +1,31 @@
+.box {
+    color: aliceblue;
+    background-image: linear-gradient(to right,rgb(205, 145, 255),rgba(255,0,0,0));
+    padding: 50px;
+   
+    border: 1px solid rgb(0, 0, 0) ;
+   
+}
+table{
+    border:border-collapse;
+   
+    margin-left: auto;
+    border: 1.5px solid rgb(0, 0, 0);
+    margin-right: auto;
+}
+th, td{
+    padding: 5px;
+    font-size: small;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+.btn{
+    
+    font-size:12px;
+    margin-left: 10px;
+}

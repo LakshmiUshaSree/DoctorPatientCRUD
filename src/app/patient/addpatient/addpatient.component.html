@@ -1,0 +1,125 @@
+<div class="container-fluid">
+
+    <div class="box mt-1 p-3">
+        <h1>CREATE NEW PATIENT</h1>
+
+        <a disabled>&nbsp;&nbsp;
+           
+            ADD PATIENT</a>
+            <a disabled>&nbsp;&nbsp;
+            
+            ADD DOCTOR</a>
+            <a href="http://localhost:4200/doctor/index" class="btn btn-success">&nbsp;&nbsp;
+             
+            VIEW DOCTOR</a>&nbsp;&nbsp;
+            <a href="http://localhost:4200/patient/index" class="btn btn-success">
+             
+           VIEW PATIENT</a>
+  
+    <div class="fam mt-5">      
+        <form [formGroup]="form" (ngSubmit)="submit()">     
+           <!-- <div class="form-group">
+
+                <label for="id">id</label>
+                <input 
+                    formControlName="id"
+                    id="id" 
+                    type="text" 
+                    class="form-control">
+                <div *ngIf="f.id.touched && f.id.invalid" class="alert alert-danger">
+                    <div *ngIf="f.id.errors?.required">Id is required.</div>
+                </div>
+            </div>
+        --> 
+
+
+            <div class="form-group">
+                <label for="patientid">Patient Id</label>
+                 <input
+                     formControlName="patientid"
+                     id="patientid" 
+                     type="text" 
+                     class="form-control">
+                 
+                 <div *ngIf="f.patientid.touched && f.patientid.invalid" class="alert alert-danger">
+                     <div *ngIf="f.patientid.errors?.required">Patient Id is required.</div>
+                     <div *ngIf="f.patientid.errors?.pattern">Please enter only 1 to 6 digits</div>
+                     </div>
+                    </div>
+            
+            <div class="form-group">
+                <label for="patientname">Patient Name</label>
+                <input 
+                    formControlName="patientname"
+                    id="patientname" 
+                    type="text" 
+                    class="form-control">
+    
+                <div *ngIf="f.patientname.touched && f.patientname.invalid" class="alert alert-danger">
+                    <div *ngIf="f.patientname.errors?.required">Patient Name is required.</div>
+                    <div *ngIf="f.patientname.errors?.pattern">Enter only characters.</div>
+                    <div *ngIf="f.patientname.errors?.pattern">only characters are allowed.</div>
+                </div>
+            </div>
+            
+          
+            
+            <div class="form-group">
+                <label for="docotrname">Doctor Names</label>
+                <select
+                formControlName="doctorname"
+                id="doctorname"    
+                type="text" 
+                    class="form-control">
+                    <option value="Dilip Kumbhakar">Dilip Kumbhakar</option>
+                <option value="Sudeep Kumar">Sudeep Kumar</option>    
+                <option value="YSR">YSR</option>
+                <option value="Tharun">Tharun</option>
+                <option value="Dinesh Reddy">Dinesh Reddy</option> 
+                
+                </select>
+                <div *ngIf="f.doctorname.touched && f.doctorname.invalid" class="alert alert-danger">
+                    <div *ngIf="f.doctorname.errors?.required">Doctor name is required.</div>
+                </div>
+                </div>
+            
+         
+        
+        
+        <div class="form-group">
+                <label for="age">Age</label>
+                <input type="date" 
+                id="age" 
+                name="age" 
+                formControlName="age">   
+              
+            <div *ngIf="f.age.touched && f.age.invalid" class="alert alert-danger">
+                <div *ngIf="f.age.errors?.required">Age is required.</div>
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="rxdate">RX Date</label>
+            <input type="date" 
+            id="rxdate" 
+            name="rxdate" 
+            formControlName="rxdate">   
+          
+        <div *ngIf="f.rxdate.touched && f.rxdate.invalid" class="alert alert-danger">
+            <div *ngIf="f.rxdate.errors?.required">RX date is required.</div>
+        </div>
+        
+    </div>
+    
+        
+        <div class="but">
+            <a href="http://localhost:4200/patient/index" class="btn btn-primary">Back</a>
+            &nbsp;&nbsp;
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+        </div> 
+    </form>
+ </div>   
+</div>
+
+
