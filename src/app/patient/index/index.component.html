@@ -1,0 +1,68 @@
+
+
+    <div class="container-fluid">
+        <div class="box mt-1 p-5">
+          <h1>PATIENT DETAILS</h1>
+        
+          <a (click)="openDialogg()">&nbsp;&nbsp;
+           
+          ADD PATIENT</a>
+          <a (click)="openDialog()">&nbsp;&nbsp;
+          
+          ADD DOCTOR</a>
+          <a href="http://localhost:4200/doctor/index" class="btn btn-success">&nbsp;&nbsp;
+           
+          VIEW DOCTOR</a>&nbsp;&nbsp;
+          <a href="http://localhost:4200/patient/index" class="btn btn-success">
+           
+         VIEW PATIENT</a>
+        </div>
+      
+    
+    <div style="overflow-x:auto;">
+      <table class="table table-bordered">
+        <tr>
+         <!--<th>id</th>--> 
+          
+           
+          <th>Id</th>
+          <th>Patient Name</th> 
+          <th>Age</th>
+          <th>Doctor Name</th>
+          <th>RX Date</th>
+       
+      <th width="290px">Action</th>
+        </tr>
+
+        <ng-container>
+          <mat-spinner *ngIf="loading" id="loading"></mat-spinner>
+        </ng-container>
+
+        <tr *ngFor="let patient of patients">
+          <!-- <td>{{ patient.id }}</td> -->
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.PatientName }}</td>
+          <td>{{ patient.Age }}</td>
+          <td>{{ patient.DoctorName }}</td>
+          <td>{{ patient.RXDate }}</td>
+            
+          
+          <td>
+ <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+
+            <a href="#" [routerLink]="['/patient/',patient.id,patient.PatientId, 'view']" class="btn btn-danger">VIEW</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+      </div>
+            
+          </td>
+
+        
+
+</tr>
+      </table>
+    </div>
+    </div>

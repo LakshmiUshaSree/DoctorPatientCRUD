@@ -1,0 +1,75 @@
+
+<div class="container-fluid">
+
+    <div class="box mt-1 p-3">
+        <h1>CREATE NEW DOCTOR</h1>
+        <a disabled>&nbsp;&nbsp;
+           
+            ADD PATIENT</a>
+            <a disabled>&nbsp;&nbsp;
+            
+            ADD DOCTOR</a>
+            <a href="http://localhost:4200/doctor/index" class="btn btn-success">&nbsp;&nbsp;
+             
+            VIEW DOCTOR</a>&nbsp;&nbsp;
+            <a href="http://localhost:4200/patient/index" class="btn btn-success">
+             
+           VIEW PATIENT</a>
+  
+    <div class="fam mt-5">      
+        <form [formGroup]="form" (ngSubmit)="submit()">     
+           <!-- <div class="form-group">
+
+                <label for="id">id</label>
+                <input 
+                    formControlName="id"
+                    id="id" 
+                    type="text" 
+                    class="form-control">
+                <div *ngIf="f.id.touched && f.id.invalid" class="alert alert-danger">
+                    <div *ngIf="f.id.errors?.required">Id is required.</div>
+                </div>
+            </div>
+        --> 
+
+
+            <div class="form-group">
+                <label for="doctorid">Doctor Id</label>
+                 <input
+                     formControlName="doctorid"
+                     id="doctorid" 
+                     type="text" 
+                     class="form-control">
+                 
+                 <div *ngIf="f.doctorid.touched && f.doctorid.invalid" class="alert alert-danger">
+                     <div *ngIf="f.doctorid.errors?.required">Doctor Id is required.</div>
+                     <div *ngIf="f.doctorid.errors?.pattern">Please enter only 1 to 6 digits</div>
+                     </div>
+                     </div>
+            
+            <div class="form-group">
+                <label for="doctorname">Doctor Name</label>
+                <input 
+                    formControlName="doctorname"
+                    id="doctorname" 
+                    type="text" 
+                    class="form-control">
+    
+                <div *ngIf="f.doctorname.touched && f.doctorname.invalid" class="alert alert-danger">
+                    <div *ngIf="f.doctorname.errors?.required">Doctor Name is required.</div>
+                    <div *ngIf="f.doctorname.errors?.pattern">Enter only characters.</div>
+                    <div *ngIf="f.doctorname.errors?.pattern">only characters are allowed.</div>
+                </div>
+            </div>
+            
+           
+    
+        
+        <div class="but">
+            <a href="http://localhost:4200/doctor/index" class="btn btn-primary">Back</a>
+            &nbsp;&nbsp;
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+        </div> 
+    </form>
+ </div>   
+</div>
