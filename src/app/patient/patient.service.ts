@@ -10,7 +10,7 @@ import { Patient } from './patient';
   providedIn: 'root'
 })
 export class PatientService {
-  private apiURL = "https://jsonplaceholder.typicode.com/posts";
+  private apiURL = "http://localhost:7071/api";
    
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,13 +21,13 @@ export class PatientService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Patient[]> {
-    return this.httpClient.get<Patient[]>(this.apiURL + '/' )
+    return this.httpClient.get<Patient[]>(this.apiURL + '/AllPatients' )
     .pipe( 
       catchError(this.errorHandler)
       )
   }
   create(patient): Observable<Patient[]> {
-    return this.httpClient.post<Patient[]>(this.apiURL + '/', JSON.stringify(patient), this.httpOptions)
+    return this.httpClient.post<Patient[]>(this.apiURL + '/PatientCreate', JSON.stringify(patient), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
@@ -35,7 +35,7 @@ export class PatientService {
   }
 
   find(id, patientId): Observable<Patient> {
-    return this.httpClient.get<Patient>(this.apiURL + '//' + id +'/' + patientId)
+    return this.httpClient.get<Patient>(this.apiURL + '/GetPatientById/' + id +'/' + patientId)
     .pipe(
       catchError(this.errorHandler)
     )

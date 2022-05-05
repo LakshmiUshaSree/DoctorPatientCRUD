@@ -3,7 +3,7 @@
     <div class="box mt-1 p-3">
         <h1>CREATE NEW PATIENT</h1>
 
-        <a disabled>&nbsp;&nbsp;
+     <!----   <a disabled>&nbsp;&nbsp;
            
             ADD PATIENT</a>
             <a disabled>&nbsp;&nbsp;
@@ -14,7 +14,7 @@
             VIEW DOCTOR</a>&nbsp;&nbsp;
             <a href="http://localhost:4200/patient/index" class="btn btn-success">
              
-           VIEW PATIENT</a>
+           VIEW PATIENT</a>-->
   
     <div class="fam mt-5">      
         <form [formGroup]="form" (ngSubmit)="submit()">     
@@ -115,7 +115,7 @@
         
         <div class="but">
             <a href="http://localhost:4200/patient/index" class="btn btn-primary">Back</a>
-            &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
         </div> 
     </form>

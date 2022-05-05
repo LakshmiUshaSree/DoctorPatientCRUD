@@ -37,6 +37,7 @@ export class AddpatientComponent implements OnInit {
            console.log('Post created successfully!');
            this.router.navigateByUrl('employee/index');
            alert("Record Created Successfully!!!")
+           window.location.reload();
       })
 
   }
