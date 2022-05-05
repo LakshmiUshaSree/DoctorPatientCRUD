@@ -33,6 +33,7 @@ export class CreateComponent implements OnInit {
            console.log('Post created successfully!');
            this.router.navigateByUrl('doctor/index');
            alert("Record Created Successfully!!!")
+           window.location.reload();
       })
   }
   }
