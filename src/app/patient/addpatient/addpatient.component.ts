@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateComponent } from 'src/app/doctor/create/create.component';
+import { DatePipe } from '@angular/common';
+import { Patient } from '../patient';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-addpatient',
@@ -12,9 +15,13 @@ import { CreateComponent } from 'src/app/doctor/create/create.component';
 })
 export class AddpatientComponent implements OnInit {
 
+
   form: FormGroup;
+  patient: Patient;
+  age: string;
   constructor(public patientService: PatientService,
-    private router: Router) { }
+    private router: Router,
+    public datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -26,6 +33,8 @@ export class AddpatientComponent implements OnInit {
         rxdate: new FormControl('', Validators.required),
       });
     }
+
+    
     
     get f(){
       return this.form.controls;
@@ -35,11 +44,27 @@ export class AddpatientComponent implements OnInit {
       console.log(this.form.value);
       this.patientService.create(this.form.value).subscribe(res => {
            console.log('Post created successfully!');
-           this.router.navigateByUrl('employee/index');
+           this.router.navigateByUrl('patient/index');
            alert("Record Created Successfully!!!")
            window.location.reload();
-      })
-
+      });
+      
+      checkdate()
+        const date = moment(this.patient.Age).format('DD-MM-YYYY');
+        console.log(date);
+     
+   
+      }
   }
 
+
+
+
+
+
+
+
+function checkdate() {
+  throw new Error('Function not implemented.');
 }
+

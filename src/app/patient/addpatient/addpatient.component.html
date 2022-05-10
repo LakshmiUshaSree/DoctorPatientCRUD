@@ -76,6 +76,10 @@
                 <option value="YSR">YSR</option>
                 <option value="Tharun">Tharun</option>
                 <option value="Dinesh Reddy">Dinesh Reddy</option> 
+                <option value="Rajesh">Rajesh</option> 
+                <option value="Swetha">Swetha</option> 
+                <option value="Neha">Neha</option> 
+                <option value="Lakshmi">Lakshmi</option> 
                 
                 </select>
                 <div *ngIf="f.doctorname.touched && f.doctorname.invalid" class="alert alert-danger">
@@ -91,8 +95,11 @@
                 <input type="date" 
                 id="age" 
                 name="age" 
-                formControlName="age">   
-              
+                placeholder="dd-mm-yyyy"
+                formControlName="age"
+                value="">   
+                
+                
             <div *ngIf="f.age.touched && f.age.invalid" class="alert alert-danger">
                 <div *ngIf="f.age.errors?.required">Age is required.</div>
             </div>
@@ -104,6 +111,7 @@
             <input type="date" 
             id="rxdate" 
             name="rxdate" 
+            placeholder="dd-mm-yyyy"
             formControlName="rxdate">   
           
         <div *ngIf="f.rxdate.touched && f.rxdate.invalid" class="alert alert-danger">
