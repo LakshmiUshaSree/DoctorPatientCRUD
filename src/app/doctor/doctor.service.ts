@@ -10,6 +10,9 @@ import { Doctor } from './doctor';
   providedIn: 'root'
 })
 export class DoctorService {
+  getAllDoctors() {
+    throw new Error('Method not implemented.');
+  }
   private apiURL = "http://localhost:7071/api";
    
   httpOptions = {

@@ -67,19 +67,15 @@
             <div class="form-group">
                 <label for="docotrname">Doctor Names</label>
                 <select
+        
                 formControlName="doctorname"
                 id="doctorname"    
                 type="text" 
-                    class="form-control">
-                    <option value="Dilip Kumbhakar">Dilip Kumbhakar</option>
-                <option value="Sudeep Kumar">Sudeep Kumar</option>    
-                <option value="YSR">YSR</option>
-                <option value="Tharun">Tharun</option>
-                <option value="Dinesh Reddy">Dinesh Reddy</option> 
-                <option value="Rajesh">Rajesh</option> 
-                <option value="Swetha">Swetha</option> 
-                <option value="Neha">Neha</option> 
-                <option value="Lakshmi">Lakshmi</option> 
+                    class="form-control"
+                    >
+                    
+                    <option *ngFor="let doctor of doctors" value={{doctor.DoctorName}}>{{ doctor.DoctorName }}</option>
+               
                 
                 </select>
                 <div *ngIf="f.doctorname.touched && f.doctorname.invalid" class="alert alert-danger">
