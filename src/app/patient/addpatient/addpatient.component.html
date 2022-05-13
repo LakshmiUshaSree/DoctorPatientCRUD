@@ -67,15 +67,15 @@
             <div class="form-group">
                 <label for="docotrname">Doctor Names</label>
                 <select
+        
                 formControlName="doctorname"
                 id="doctorname"    
                 type="text" 
-                    class="form-control">
-                    <option value="Dilip Kumbhakar">Dilip Kumbhakar</option>
-                <option value="Sudeep Kumar">Sudeep Kumar</option>    
-                <option value="YSR">YSR</option>
-                <option value="Tharun">Tharun</option>
-                <option value="Dinesh Reddy">Dinesh Reddy</option> 
+                    class="form-control"
+                    >
+                    
+                    <option *ngFor="let doctor of doctors" value={{doctor.DoctorName}}>{{ doctor.DoctorName }}</option>
+               
                 
                 </select>
                 <div *ngIf="f.doctorname.touched && f.doctorname.invalid" class="alert alert-danger">
@@ -91,8 +91,11 @@
                 <input type="date" 
                 id="age" 
                 name="age" 
-                formControlName="age">   
-              
+                placeholder="dd-mm-yyyy"
+                formControlName="age"
+                value="">   
+                
+                
             <div *ngIf="f.age.touched && f.age.invalid" class="alert alert-danger">
                 <div *ngIf="f.age.errors?.required">Age is required.</div>
             </div>
@@ -104,6 +107,7 @@
             <input type="date" 
             id="rxdate" 
             name="rxdate" 
+            placeholder="dd-mm-yyyy"
             formControlName="rxdate">   
           
         <div *ngIf="f.rxdate.touched && f.rxdate.invalid" class="alert alert-danger">

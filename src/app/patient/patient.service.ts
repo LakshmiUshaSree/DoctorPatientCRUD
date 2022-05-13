@@ -5,6 +5,7 @@ import {  Observable, pipe, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Patient } from './patient';
+import { Doctor } from 'src/app/doctor/doctor'
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,13 @@ export class PatientService {
 
   getAll(): Observable<Patient[]> {
     return this.httpClient.get<Patient[]>(this.apiURL + '/AllPatients' )
+    .pipe( 
+      catchError(this.errorHandler)
+      )
+  }
+
+  getAllDoctors(doctorname): Observable<Doctor[]> {
+    return this.httpClient.get<Doctor[]>(this.apiURL + '/AllDoctors' + doctorname )
     .pipe( 
       catchError(this.errorHandler)
       )

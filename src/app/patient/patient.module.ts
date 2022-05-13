@@ -9,6 +9,7 @@ import { AddpatientComponent } from './addpatient/addpatient.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
+
 @NgModule({
   declarations: [
     ViewComponent,
