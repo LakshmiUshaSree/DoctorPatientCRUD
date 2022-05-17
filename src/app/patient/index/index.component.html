@@ -1,19 +1,19 @@
 
 
     <div class="container-fluid">
-        <div class="box mt-1 p-5">
+        <div class="b mt-1 p-5">
           <h1>PATIENT DETAILS</h1>
         
-          <a (click)="openDialogg()">&nbsp;&nbsp;
+          <a class="btn btn-outline-success" (click)="openDialogg()">&nbsp;&nbsp;
            
           ADD PATIENT</a>
-          <a (click)="openDialog()">&nbsp;&nbsp;
+          <a class="btn btn-outline-success" (click)="openDialog()">&nbsp;&nbsp;
           
           ADD DOCTOR</a>
-          <a href="http://localhost:4200/doctor/index" class="btn btn-success">&nbsp;&nbsp;
+          <a class="btn btn-outline-success" href="http://localhost:4200/doctor/index">&nbsp;&nbsp;
            
           VIEW DOCTOR</a>&nbsp;&nbsp;
-          <a href="http://localhost:4200/patient/index" class="btn btn-success">
+          <a class="btn btn-outline-success" href="http://localhost:4200/patient/index">
            
          VIEW PATIENT</a>
         </div>
@@ -52,7 +52,7 @@
     <div class="w3-modal-content">
       <div class="w3-container">
 
-            <a href="#" [routerLink]="['/patient/',patient.id,patient.PatientId, 'view']" class="btn btn-danger">VIEW</a>
+            <a href="#" [routerLink]="['/patient/',patient.id,patient.PatientId, 'view']" class="btn btn-outline-danger">VIEW</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>

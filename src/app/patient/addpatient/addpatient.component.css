@@ -1,6 +1,6 @@
 .box {
-    color: aliceblue;
-    background-image: linear-gradient(to right,rgb(205, 145, 255),rgba(255,0,0,0));
+    color: burlywood;
+    background-image: linear-gradient(to right,lavenderblush,rgba(255,0,0,0));
     padding: 50px;
     width: 500px;
     border: 1px solid rgb(0, 0, 0) ;
