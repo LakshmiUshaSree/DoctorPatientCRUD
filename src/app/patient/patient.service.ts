@@ -28,8 +28,8 @@ export class PatientService {
       )
   }
 
-  getAllDoctors(doctorname): Observable<Doctor[]> {
-    return this.httpClient.get<Doctor[]>(this.apiURL + '/AllDoctors' + doctorname )
+  getAllDoctors(doctorid): Observable<Doctor[]> {
+    return this.httpClient.get<Doctor[]>(this.apiURL + '/AllDoctors' + doctorid )
     .pipe( 
       catchError(this.errorHandler)
       )
